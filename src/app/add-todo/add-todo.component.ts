@@ -10,6 +10,11 @@ export class AddTodoComponent implements OnInit {
 
   addItemTitle = '';
 
+  emitAddItem() {
+    this.addItem.emit(this.addItemTitle);
+    this.addItemTitle = '';
+  }
+
   constructor() { }
 
   ngOnInit(): void {

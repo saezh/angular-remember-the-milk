@@ -1,7 +1,7 @@
 <h1>Remember the Eggs</h1>
 <app-add-todo (addItem)="onAddItem($event)"></app-add-todo>
 <ol class="list">
-  <li *ngFor="let item of items; let index = index" class="list-item">
+  <li *ngFor="let item of todo.getItems(); let index = index" class="list-item">
     {{ item }}
     <button (click)="removeItem(index)" class="remove">Remove</button>
   </li>

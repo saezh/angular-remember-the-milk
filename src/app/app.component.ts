@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items = ['Buy Eggs!', 'Milk', 'Bananas'];
+  constructor(public todo: TodoService) {}
 
   removeItem(index: number) {
-    this.items.splice(index, 1);
+    this.todo.removeItem(index);
   }
 
   onAddItem(title: string) {
-    this.items.unshift(title);
+    this.todo.addItem(title);
   }
 }
