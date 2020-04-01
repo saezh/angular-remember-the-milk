@@ -1,19 +1,8 @@
-<h1>Expression Bindings</h1>
-<p>{{ title + ' ' + person.name }}</p>
-<p>{{ numbers[2] * numbers[3]}}</p>
-<p>Random: {{ getPersonName() }}</p>
-
-<h1 id="{{person.name}}" [title]="person.name + ' ' + count">Property Bindings</h1>
-<input type="number" [attr.value]="count">
-<div [class.odd-number]="count % 2 !== 0" [style.backgroundColor]="count % 2 === 0 ? 'red' : ''">I'm a div</div>
-
-<button (click)="reset()" (mouseenter)="reset(100)">Reset</button>
-
-
-<h1>Using ngFor</h1>
-<ul>
-  <li *ngFor="let number of numbers">
-    {{number}}
+<h1>Remember the Eggs</h1>
+<app-add-todo (addItem)="onAddItem($event)"></app-add-todo>
+<ol class="list">
+  <li *ngFor="let item of items; let index = index" class="list-item">
+    {{ item }}
+    <button (click)="removeItem(index)" class="remove">Remove</button>
   </li>
-</ul>
-<button (click)="numbers.push(numbers.length + 1)">Add number</button>
+</ol>

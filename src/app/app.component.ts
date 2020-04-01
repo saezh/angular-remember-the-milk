@@ -6,23 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sae';
-  person = {
-    name: 'Peter'
-  };
-  numbers = [1, 2, 3, 4, 5];
+  items = ['Buy Eggs!', 'Milk', 'Bananas'];
 
-  count = 0;
-
-  constructor() {
-    setInterval(() => this.count++, 1000);
+  removeItem(index: number) {
+    this.items.splice(index, 1);
   }
 
-  getPersonName() {
-    return this.person.name;
-  }
-
-  reset(initialValue = 0) {
-    this.count = initialValue;
+  onAddItem(title: string) {
+    this.items.unshift(title);
   }
 }

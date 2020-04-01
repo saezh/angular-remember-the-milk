@@ -1,0 +1,9 @@
+<div class="add-item">
+  <input type="text" class="add-item-title"
+         (input)="addItemTitle = $event.target.value"
+         (keydown.enter)="addItem.emit(addItemTitle)"
+         [value]="addItemTitle">
+  <button (click)="addItem.emit(addItemTitle)"
+          [disabled]="addItemTitle.length === 0"
+          class="add-item-button">Add</button>
+</div>

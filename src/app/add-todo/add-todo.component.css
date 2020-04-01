@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.add-item {
+  display: flex;
+}
+
+.add-item-title {
+  flex: 1;
+}
